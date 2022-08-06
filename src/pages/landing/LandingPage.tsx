@@ -7,7 +7,7 @@ import SocialMedia from "../../components/social-media";
 
 const LandingPage = () => {
   return (
-    <Container maxW={"6xl"} paddingTop={20} paddingBottom={12}>
+    <Container maxW={"7xl"} paddingTop={14} paddingBottom={14}>
       <Grid templateColumns="repeat(2, 1fr)" gap={0} alignItems="center" mb={8}>
         <Stack spacing={8}>
           <Heading fontSize={"58px"} color="gray.900">

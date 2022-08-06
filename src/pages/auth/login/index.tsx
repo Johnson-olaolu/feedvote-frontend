@@ -7,9 +7,8 @@ import {AiOutlineEye, AiOutlineEyeInvisible} from "react-icons/ai"
 import LoginBanner from "../../../assets/img/Group 245.png"
 const Login = () => {
     const [showPassword1, setShowPassword1] = useState(false)
-    const [showPassword2, setShowPassword2] = useState(false)
   return (
-    <Container maxW={"6xl"} paddingTop={20} paddingBottom={12}>
+    <Container maxW={"6xl"} paddingTop={14} paddingBottom={14}>
       <Grid templateColumns="repeat(2, 1fr)" gap={0} alignItems="start" mb={8}>
         <Stack spacing={12}>
           <Heading fontSize={"4xl"} color="gray.900">
@@ -28,6 +27,7 @@ const Login = () => {
               _focusVisible = {{
                 shadow : "lg"
               }}
+              type={"email"}
               placeholder="Enter your email here" fontSize={"lg"} bg={"white"} variant="filled" h={16} pl={16} shadow={"md"} rounded={20} />
               {/* <InputRightElement children={<CheckIcon color="green.500" />} /> */}
             </InputGroup>

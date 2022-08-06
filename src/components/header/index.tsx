@@ -7,7 +7,7 @@ import Logo from "../../assets/img/Group 175.png";
 const Header = () => {
   return (
     <Box shadow="base" bg={"white"} pos={"relative"} zIndex={5}>
-      <Container maxW={"6xl"}>
+      <Container maxW={"7xl"}>
         <Flex height={16} alignItems="center" justifyContent={"space-between"}>
           <Flex gap={32} alignItems={"center"}>
             <Image src={Logo} maxH={10} />
