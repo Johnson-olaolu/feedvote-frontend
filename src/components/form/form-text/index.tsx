@@ -5,6 +5,9 @@ interface ICustomFormInput {
   name: string;
   label: string;
   placeholder : string;
+  onChange : (e: React.ChangeEvent<HTMLInputElement>) => void
+  onBlur : (e : React.FocusEvent<HTMLInputElement> ) => void
+  error? : string
 }
 
 const CustomFormInput: React.FC<ICustomFormInput> = (props) => {

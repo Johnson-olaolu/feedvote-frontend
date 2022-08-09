@@ -14,16 +14,16 @@ const CreateProfile = () => {
       <form>
         <Grid templateColumns="repeat(2, 1fr)" rowGap={14} columnGap={5}>
           <GridItem colSpan={1}>
-            <CustomFormInput  label="First Name" name="firstName" placeholder="Enter first name"/>
+            <CustomFormInput  label="First Name" name="firstName" placeholder="Enter first name" onChange={() => {}} onBlur={() => {}} />
           </GridItem>
           <GridItem colSpan={1}>
-          <CustomFormInput  label="Last Name" name="lastName" placeholder="Enter last name"/>
+          <CustomFormInput  label="Last Name" name="lastName" placeholder="Enter last name" onChange={() => {}} onBlur={() => {}} />
           </GridItem>
           <GridItem colSpan={2}>
             <CustomFormTextArea name="bio" label="About you" placeholder="Enter few sentense about you"/>
           </GridItem>
           <GridItem colSpan={2}>
-              <CustomFormInput label="What's your profession" name="proffession" placeholder="E.g Project Manager"/>
+              <CustomFormInput label="What's your profession" name="proffession" placeholder="E.g Project Manager" onChange={() => {}} onBlur={() => {}} />
           </GridItem>
           <GridItem colSpan={2}>
           </GridItem>
