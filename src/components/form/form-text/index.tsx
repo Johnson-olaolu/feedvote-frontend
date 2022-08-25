@@ -14,7 +14,7 @@ const CustomFormInput: React.FC<ICustomFormInput> = (props) => {
   const { name, label, placeholder } = props;
   return (
     <Stack spacing={8}>
-      <FormLabel paddingX={8} paddingY={5} fontSize={"lg"} color={"gray.700"} fontWeight={"bold"} shadow={"md"} rounded={20} bg={"white"} margin={0}>
+      <FormLabel paddingX={8} paddingY={5} fontSize={"lg"} color={"gray.700"} fontWeight={"bold"} shadow={"md"} rounded={20} bg={"gray.100"} margin={0}>
         {label}
       </FormLabel>
       <Input

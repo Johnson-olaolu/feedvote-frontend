@@ -1,18 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+interface IUser {
+	email : string
+}
 
 // Slice
 const userSlice = createSlice({
 	name: "user",
 	initialState: {
-		user:null ,
-	},
+		user:undefined ,
+	} as {user?: IUser},
 	reducers: {
 		userLogin: (state, action) => {
 			state.user = action.payload;
 		},
 		userLogout: (state, action) => {
-			state.user = null;
+			state.user = undefined;
 		},
 	},
 });

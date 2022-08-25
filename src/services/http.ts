@@ -1,39 +1,41 @@
 /* eslint-disable no-param-reassign */
-import axios from 'axios';
-import QueryString from 'query-string';
-import {
-  IDelete, IGet, IPatch, IPost, IPut,
-} from './types';
+import axios from "axios";
+import QueryString from "query-string";
+import { IDelete, IGet, IPatch, IPost, IPut } from "./types";
 
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 class HttpFacade {
   private http;
+  private httpMultipart;
 
   constructor() {
     this.http = axios.create({
-      baseURL: '',
-      headers: { 'Content-Type': 'application/json' },
+      baseURL: BASE_URL,
+      headers: { "Content-Type": "application/json" },
+    });
+
+    this.httpMultipart = axios.create({
+      baseURL: BASE_URL,
+      headers: { "Content-Type": "multipart/form-data" },
     });
 
     this.http.interceptors.request.use(
       (config) => {
-        const token = localStorage.getItem('accessToken');
+        const token = localStorage.getItem("accessToken");
         if (token) config.headers!.Authorization = `Bearer ${token}`;
         return config;
       },
-      (error) => Promise.reject(error),
+      (error) => Promise.reject(error)
     );
 
     this.http.interceptors.response.use(
       (response) => response,
       (error) => {
-        if (
-          error?.response?.status === 401
-            && window.location.pathname !== '/auth/login'
-        ) {
-          window.location.href = '/auth/logout';
+        if (error?.response?.status === 401 && window.location.pathname !== "/auth/login") {
+          window.location.href = "/auth/logout";
         }
         return Promise.reject(error.response);
-      },
+      }
     );
   }
 
@@ -60,6 +62,11 @@ class HttpFacade {
 
   put = async ({ url, body }: IPut) => {
     const response = await this.http.put(url, body);
+    return response.data;
+  };
+
+  upload = async ({ url, body }: IPost) => {
+    const response = await this.httpMultipart.post(url, body);
     return response.data;
   };
 }

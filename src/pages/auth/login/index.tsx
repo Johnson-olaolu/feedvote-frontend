@@ -156,7 +156,7 @@ const Login = () => {
                 ) : null}
               </Box>
             </Stack>
-            <Button type="submit" mt={12} colorScheme="teal" size={"lg"} fontSize="md" w={"max-content"}>
+            <Button isLoading={loginFormik.isSubmitting} type="submit" mt={12} colorScheme="teal" size={"lg"} fontSize="md" w={"max-content"}>
               Login
             </Button>
           </form>

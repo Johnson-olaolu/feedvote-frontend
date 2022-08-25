@@ -6,8 +6,8 @@ import UpdateProfile from "./update-profile";
 const ProfileRoutes = () => {
   return (
     <Routes>
-      <Route path="/create" element={<CreateProfile />} />
-      <Route path="/update" element={<UpdateProfile />} />
+      <Route path="/" element={<CreateProfile />} />
+      {/* <Route path="/update" element={<UpdateProfile />} /> */}
     </Routes>
   );
 };
